@@ -114,6 +114,12 @@ background: #F3F5FC;
 	position: relative;
 	top: 20%;
 }
+.hidden{
+	display: none;
+}
+.static{
+	display: block;
+}
 
 @media screen and (max-width:768px){
 	.container{
@@ -147,4 +153,10 @@ background: #F3F5FC;
 		width: 100%;
 	}
 
+}
+@media screen and (max-width:375px){
+	.botones{
+		flex-direction: column;
+		gap: 20px;
+	}
 }
