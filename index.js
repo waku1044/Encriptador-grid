@@ -4,6 +4,12 @@ const $btndesencriptar = document.querySelector('#desencriptar');
 const $rect = document.querySelector('.rectangulo');
 const $btncopiar = document.querySelector('#copiar');
 	
+// `La letra "e" es convertida para "enter"`
+// `La letra "i" es convertida para "imes"`
+// `La letra "a" es convertida para "ai"`
+// `La letra "o" es convertida para "ober"`
+// `La letra "u" es convertida para "ufat"`
+
 
 function encriptado(){
 	if($txtuser.value != ''){
@@ -14,7 +20,7 @@ function encriptado(){
 		let parra = document.createElement('p');
 		parra.classList.add('txtcel');
 		parra.setAttribute('id','textcel');
-		parra.innerHTML = $txtuser.value.replaceAll('u','usuru').replaceAll('e','enter').replaceAll('i','isis').replaceAll('o','ober').replaceAll('a','ai');
+		parra.innerHTML = $txtuser.value.replaceAll('e','enter').replaceAll('i','imes').replaceAll('a','ai').replaceAll('o','ober').replaceAll('u','ufat');
 		
 		$btncopiar.classList.replace('hidden','static');
 		$btncopiar.classList.add('btn','btnrespon');
@@ -32,7 +38,7 @@ function encriptado(){
 function desencriptar(){
 
 	let p = document.createElement('p');
-	p.innerHTML = txtcopy.innerHTML.replaceAll('usuru','u').replaceAll('enter','e').replaceAll('isis','i').replaceAll('ober','o').replaceAll('ai','a');
+	p.innerHTML = txtcopy.innerHTML.replaceAll('enter','e').replaceAll('imes','i').replaceAll('ai','a').replaceAll('ober','o').replaceAll('ufat','u');
 	p.classList.add('txtcel');
 	p.setAttribute('id','textcel');
 
