@@ -13,15 +13,16 @@ function encriptado(){
 
 		let parra = document.createElement('p');
 		parra.classList.add('txtcel');
+		parra.setAttribute('id','textcel');
 		parra.innerHTML = $txtuser.value.replaceAll('u','usuru').replaceAll('e','enter').replaceAll('i','isis').replaceAll('o','ober').replaceAll('a','ai');
 		
 		$btncopiar.classList.replace('hidden','static');
-		console.log($btncopiar)
 		$btncopiar.classList.add('btn','btnrespon');
 		$rect.appendChild(parra);
-		$rect.appendChild($btncopiar)
+		$rect.appendChild($btncopiar);
 		$txtuser.value = '';
-		$btncopiar.onclick = copiar;
+		
+
 		
 	}else{
 		alert('Ingrese un texto')
@@ -29,19 +30,37 @@ function encriptado(){
 }
 
 function desencriptar(){
-	// let valor = document.querySelector($txtuser).value;
-	console.log($txtuser.innerHTML)
-}
 
-function copiar(){
-	alert('copiado correctamente')
-	let textCopy = document.querySelector('.txtcel');
+	let p = document.createElement('p');
+	p.innerHTML = txtcopy.innerHTML.replaceAll('usuru','u').replaceAll('enter','e').replaceAll('isis','i').replaceAll('ober','o').replaceAll('ai','a');
+	p.classList.add('txtcel');
+	p.setAttribute('id','textcel');
+
+	$btncopiar.classList.replace('hidden','static');
+	$btncopiar.classList.add('btn','btnrespon');
 	
-	// textCopy.select();
-	// textCopy.setSelectionRange(0,99999);
-	navigator.clipboard.writeText(textCopy.value);
-	console.log(textCopy.value)
+	$rect.innerHTML = '';
+	$rect.appendChild(p);
+	$rect.appendChild($btncopiar);
+	$txtuser.value = '';
+}
+var txtcopy;
+function copiar(){
+	 txtcopy = document.querySelector('#textcel');
+	// txtcopy.select();
+	navigator.clipboard.writeText(txtcopy.innerHTML);
+	outFunc();
+}
+//msj para btn copiar
+function outFunc() {
+  $btncopiar.innerHTML = "Copiando...!!!";
+  setTimeout(()=>{
+  	$btncopiar.innerHTML = "Copiar";
+  },1000)
+
 }
 
+
+$btncopiar.onclick = copiar;
 $btndesencriptar.onclick = desencriptar;
 $btnencriptar.onclick = encriptado

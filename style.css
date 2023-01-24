@@ -101,12 +101,12 @@ background: #F3F5FC;
 	margin-bottom: 30px;
 }
 .txtcel{
-	    word-break: break-word;
-	    align-self: flex-start;
-	    margin-top: 10px;
-	    font-size: 1.5em;
-	    position: relative;
-	    bottom:70px;
+	word-break: break-word;
+	align-self: flex-start;
+	margin-top: 10px;
+	font-size: 1.5em;
+	position: relative;
+	bottom:70px;
 }
 .btnrespon{
 	border: none;
