@@ -10,7 +10,7 @@ const $btncopiar = document.querySelector('#copiar');
 // `La letra "o" es convertida para "ober"`
 // `La letra "u" es convertida para "ufat"`
 
-
+// Encriptado
 function encriptado(){
 	if($txtuser.value != ''){
 
@@ -34,7 +34,7 @@ function encriptado(){
 		alert('Ingrese un texto')
 	}
 }
-
+// Desencriptar
 function desencriptar(){
 
 	let p = document.createElement('p');
@@ -50,6 +50,7 @@ function desencriptar(){
 	$rect.appendChild($btncopiar);
 	$txtuser.value = '';
 }
+// Copiar el texto
 var txtcopy;
 function copiar(){
 	 txtcopy = document.querySelector('#textcel');
